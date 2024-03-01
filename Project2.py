@@ -7,7 +7,7 @@ words = {'0': 'ноль', '1': 'один', '2': 'два', '3': 'три', '4': '�
 
 with open("lorem.txt", 'r') as file:
     line = file.read()
-    numbers = re.findall(r'\b(?<![0-9])(?:[02468][13579]|[13579][02468])+(?![0-9])\b', line)
+    numbers = re.findall(r'\b(?:[02468][13579]|[13579][02468])+\b', line)
     print(numbers)
     for number in numbers:
         min_digit = min(number)
