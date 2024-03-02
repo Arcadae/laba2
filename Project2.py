@@ -9,6 +9,8 @@ with open("lorem.txt", 'r') as file:
     line = file.read()
     numbers = re.findall(r'\b(?:[02468][13579]|[13579][02468])+\b', line)
     print(numbers)
+    if len(numbers)==0:
+        print('<<END>>')
     for number in numbers:
         min_digit = min(number)
         max_digit = max(number)
