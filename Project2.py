@@ -7,7 +7,7 @@ words = {'0': 'ноль', '1': 'один', '2': 'два', '3': 'три', '4': '�
 
 with open("lorem.txt", 'r') as file:
     line = file.read()
-    numbers = re.findall(r'\b(?:[02468][13579]|[13579][02468])+\b', line)
+    numbers = re.findall(r'\b(?:\d*[13579]\d*[02468]\d*|\d*[02468]\d*[13579]\d*)\b', line)
     print(numbers)
     if len(numbers)==0:
         print('<<END>>')
